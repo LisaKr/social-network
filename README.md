@@ -63,4 +63,4 @@ Future Features
 ----------
 
 - make it responsive
-
+- fix the functionality for more than one simultaneous fried requests

@@ -250,7 +250,6 @@ app.get("/get-friends", async (req,res) => {
 /////////////GETTING SEARCH RESULTS/////////////////////
 app.get("/search/:request", async (req,res) => {
     let resp = await db.search(req.params.request);
-    console.log("search results", resp.rows);
     res.json(resp.rows);
 });
 
