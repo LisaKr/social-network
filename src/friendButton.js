@@ -3,8 +3,11 @@
 import React from "react";
 import axios from "./axios";
 import {initSocket} from "./socket.js";
+import { connect } from "react-redux";
 
-export default class FriendButton extends React.Component {
+import {closeFriendRequest} from "./actions.js";
+
+class FriendButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -86,6 +89,8 @@ export default class FriendButton extends React.Component {
                     text: "unfriend",
                     rejectButtonVisible: false
                 });
+                console.log("sending stuff here");
+                this.props.dispatch(closeFriendRequest());
                 return;
             }
         } catch (err) {
@@ -101,6 +106,7 @@ export default class FriendButton extends React.Component {
             text: "Send a friend request",
             rejectButtonVisible: false
         });
+        this.props.dispatch(closeFriendRequest());
         return;
     }
 
@@ -116,3 +122,12 @@ export default class FriendButton extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+
+    return {
+        friendRequest: state.friendRequest
+    };
+}
+
+export default connect(mapStateToProps)(FriendButton);

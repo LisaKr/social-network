@@ -568,13 +568,15 @@ button.icon-button {
 /*//////////////////////////FRIEND REQUEST POPUP////////////////////////////////*/
 
 .friend-request-container {
+    width: 20px;
+    height: 20px;
+    color: white;
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #2F6690;
-    width: 30%;
-    border: 1px solid black;
+    background: #D81E5B;
+    text-align: center;
+    padding-top: 0.5em;
+    right: 5.5em;
+    top: 0.5em;
 }
 
 .friend-request-name {

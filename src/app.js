@@ -94,7 +94,9 @@ class App extends React.Component {
                             <div className="header-right">
                                 <Link to="/chat"> <img className="icon chat" src="/chat.png"/> </Link>
                                 <Link to="/online"> <img className="icon online" src="/online.png"/> </Link>
-                                <Link to="/friends"> <img className="icon friend" src="/friends.png"/> </Link>
+                                <Link to="/friends"> <img className="icon friend" src="/friends.png"/></Link>
+                                {/*Redux: notification about incoming friend request, no matter where on the site you are*/}
+                                {this.props.friendRequest && <FriendRequest/>}
                                 <a href="/logout"> <img className="icon" src="/logout.png"/> </a>
                             </div>
                         </div>
@@ -138,8 +140,7 @@ class App extends React.Component {
                             path="/chat"
                             component={Chat}
                         />
-                        {/*Redux: notification about incoming friend request, no matter where on the site you are*/}
-                        {this.props.friendRequest && <FriendRequest/>}
+
                     </div>
                 </BrowserRouter>
 
