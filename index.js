@@ -238,7 +238,6 @@ app.post("/friendship/:id/delete", async (req, res) => {
 ////ACCEPTING REQUEST
 app.post("/friendship/:id/accept", async (req, res) => {
     let resp = await db.acceptRequest(req.params.id, req.session.userID);
-    console.log("response on the back accepting the request!!!", resp);
     res.json(resp.rows[0]);
 });
 
@@ -250,7 +249,6 @@ app.get("/get-friends", async (req,res) => {
 
 /////////////GETTING SEARCH RESULTS/////////////////////
 app.get("/search/:request", async (req,res) => {
-    console.log("search hit!");
     let resp = await db.search(req.params.request);
     console.log("search results", resp.rows);
     res.json(resp.rows);

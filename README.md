@@ -32,12 +32,12 @@ Once you have registered or logged in, you land on your profile page. The applic
   <img src="preview2.gif"/>
 </p>
 
-There is an incremental search allowing looking for other users. Once on the other user's profile you can peform different actions depending on your existing friendship status with the respective user. Possibilities include sending/cancelling a friend request, unfriending or accepting/rejecting their request.
+There is an incremental search allowing you to look for other users. Once on the other user's profile you can peform different actions depending on your existing friendship status with the respective user. Possibilities include sending/cancelling a friend request, unfriending or accepting/rejecting their request.
 <p align="center">
   <img src="preview3.gif"/>
 </p>
 
-The user whos is being befriended gets a notification about it in real time.
+The user whos is being befriended gets a notification about it in real time. When clicking on the notification you are being redirected to the profile of the user who sent the request.
 <p align="center">
   <img src="preview6.gif"/>
 </p>
