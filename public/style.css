@@ -1,0 +1,585 @@
+/*//////GENERAL LOOK//////*/
+
+html, body, main, .page, .app-page {
+  height: 100%;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Rubik";
+    background: #DBE4EE;
+}
+
+.closingbutton {
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    vertical-align: top;
+    text-align: center;
+}
+
+img, h2 {
+    display: inline-block;
+}
+
+.logo-img {
+    width: 100px;
+    margin: 0.5em;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: black;
+}
+
+button:focus, input:focus {
+    outline: none;
+}
+/*////////////////////////////////////////LOGGED OUT EXPERIENCE/////////////////////////////////////*/
+.page {
+    background-image: url("/back.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.welcome-container {
+    width: 55%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: white;
+}
+
+.welcome-logo {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+}
+
+.registration-container, .login-container {
+    text-align: center;
+
+}
+
+/* to force the line break before the login/register button */
+break {
+    flex-basis: 100%;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+/*for links in login and register*/
+.link {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 200;
+}
+
+/*////////////////ROTATING BUTTONS ON THE FRONT PAGE//////////////////*/
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+.buttons {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+}
+/*setting a 3d scene for my elements to live in*/
+.scene{
+	width: 200px;
+	height: 31px;
+	perspective: 800px;
+    margin: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+/*cube -- object that houses the sides of my 3d object*/
+.cube{
+	position: relative;
+	width: 200px;
+	height: 30px;
+    /*for its children -- the sides to be rendered in 3d space*/
+	transform-style: preserve-3d;
+    /*all means that it applies to all the transformed properties*/
+	transition: all 0.4s ;
+}
+
+.front{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #F0544F;
+    /*rotateX makes it rotate along the horizontal axis and this one stays in place while the bottom is rotated to be hidden*/
+    transform: rotateX(0deg) translate3d(-50px,0px,15px);
+    padding-top: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: 200;
+}
+
+.bottom{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #D81E5B;
+	transform: rotateX(-90deg) translate3d(-50px,0px,15px);
+    text-align: center;
+    padding-top: 0.5em;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: 200;
+
+}
+
+.small {
+    width: 100px;
+    height: 100%;
+    font-size: 15px;
+    padding: 0;
+}
+
+.reg-front {
+    transform: rotateX(0deg) translate3d(-50px,0px,15px);
+}
+
+.reg-bottom {
+    transform: rotateX(-90deg) translate3d(-50px,0px,15px);
+}
+
+
+.scene:hover .cube{
+	transform: rotateX(90deg);
+}
+
+.logout {
+    margin: 0 auto;
+}
+/*////////////////////////////////////////////////////////////*/
+
+
+/*////////////LOGIN AND REGISTRATION FORMS AND INPUT FIELDS//////////////////*/
+form {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form>input {
+    flex: 0 50%;
+}
+
+.welcome-input {
+    margin: 10px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid white;
+    background: inherit;
+    font-size: 12px;
+    text-align: center;
+}
+
+ .welcome-input::placeholder, .welcome-input[type="text"], .welcome-input[type="password"] {
+        color: white;
+        font-size: 16px;
+}
+
+
+/*////////ERROR MESSAGE ON LOGIN AND REGISTRATION//////////*/
+.error {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/*////////////////////////////////LOGGED IN EXPERIENCE///////////////////////////////////////////*/
+
+/*//////////HEADER/////////////////////*/
+
+.app-header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    background: #18A999;
+    color: #283044;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.app-logo .logo-text {
+    display: none;
+}
+
+.title {
+    vertical-align: top;
+    text-align: center;
+    display:inline-block;
+}
+
+.app-header .profile-pic-container {
+    align-self: center;
+    margin-right: 2em;
+    margin-left: 1em;
+}
+
+
+.app-header .profile{
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+}
+
+.app-header .camera {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.app-header .uploaderButton {
+    font-size: 11px;
+}
+
+.header-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.searchbar {
+    width: 150px;
+    height: 2em;
+    margin-top: 2em;
+    border-radius: 10px;
+    border:none;
+    font-size: 1.2em;
+}
+
+.header-right {
+    display: flex;
+    margin-right: 1em;
+    justify-content: flex-end;
+    vertical-align: middle;
+}
+
+/*///ICONS///*/
+.icon {
+    width: 40px;
+    height:40px;
+    margin-top: 2em;
+}
+
+.friend {
+    margin-top:1em;
+    width: 70px;
+    height:70px;
+}
+
+.online, .chat, .friend {
+    margin-right: 1.5em;
+}
+
+.chat {
+    margin-top: 2.5em;
+}
+/*//////////////////////////////////////////////////////////////////*/
+
+
+
+/*//////////////////IMAGE UPLOADER INFO ON HOVER ON THE PROFILE PIC////////////////////////*/
+.uploaderButton {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    color: #ebf0f6;
+    text-align: center;
+    flex-grow: 1;
+    border-radius: 100%;
+}
+
+.uploader-text {
+    text-align: center;
+    margin: 1em auto;
+}
+
+.camera {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.uploaderButton:hover {
+    opacity: 1;
+}
+
+/*//////////////IMAGE UPLOADER//////////////////*/
+input[type="file"] {
+    border: none;
+}
+
+.uploader {
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    z-index: 99;
+    text-align: center;
+    background-color: #81A4CD;
+    width: 40%;
+}
+
+button.icon-button {
+    background: inherit;
+}
+
+.icon-button .icon {
+    margin: 1em;
+    width: 30px;
+    height: 30px;
+}
+
+.image-form {
+    width: 50%;
+    margin: 0 auto;
+    vertical-align: bottom;
+}
+
+.image-form input {
+    margin-top: 1em;
+}
+/*/////////////////////////////////////////////*/
+
+/*////////////////////PROFILE CONTAINER/////////////////////////*/
+
+.profile-container, .opp-container {
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+/*big profile pic*/
+.profile {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 5px solid #81A4CD;
+}
+
+.profile-pic-container {
+    display: inline-block;
+}
+
+.profile-and-button {
+    display: inline-block;
+    position: relative;
+}
+
+.profile-and-button img {
+    display: block;
+}
+
+.profile-and-button button {
+    width: 100px;
+}
+
+.name-and-bio {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 2em;
+}
+
+.icon.edit {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bio-form-container {
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    z-index: 99;
+    text-align: center;
+    background-color: #81A4CD;
+    width: 40%;
+}
+
+.bio-form {
+    width:50%;
+    margin: 0 auto;
+}
+
+.bio-form textarea {
+    width: 50%;
+    margin: 1em auto;
+    border: none;
+}
+
+.closingbutton-bio {
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.name-and-bio .relationship-button-friendpage {
+    margin-left: 0;
+    margin-top: 4em;
+}
+
+.name-and-bio .relationship-button-friendpage button {
+    margin-left: 0;
+}
+
+/*/////////////////////////////////////////////*/
+
+
+/*////////////////////CHAT/////////////////////////*/
+.chat-messages {
+    width: 50%;
+    height: 300px;
+    border: 2px solid black;
+    overflow: scroll;
+    margin: 20px auto;
+    background: #84C0C6;
+}
+
+.messages .profile {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.chat-textarea {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.chat-textarea textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*/////////////////////////////////////////////*/
+
+
+/*////////////////////FRIENDS AND WANNABES/////////////////////////*/
+
+.friends-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friends, .users {
+    margin: 1em;
+    text-align: center;
+}
+
+.friends-container h2, .bio-form h2 {
+    display: block;
+}
+
+.relationship-button-friendpage button{
+    background: #46B1C9;
+    height: 30px;
+    color: black;
+    font-weight: 500;
+    margin: 0.5em;
+}
+
+.relationship-button-friendpage {
+    text-align: center;
+    margin: 0.5em;
+}
+
+.title {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+/*///////////////////////////////////////////////////////////*/
+
+
+/*////////////////////////ONLINE USERS////////////////////////////////*/
+.onlineUsers-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*///////////////////////////////////////////////////////////*/
+
+
+
+/*////////////////////SEARCH RESULTS/////////////////////////*/
+.result-info {
+    position: relative;
+    z-index: 999999;
+    background: white;
+    font-size: 1.2em;
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+.result-info .profile {
+    width: 25px;
+    height: 25px;
+}
+
+.result-pic, .result-name {
+    display: inline-block;
+}
+
+.result-pic {
+    margin-left: 1em;
+}
+
+.result-error {
+    font-size: 1.1em;
+    text-decoration: none;
+    color:black;
+    cursor: auto;
+}
+/*///////////////////////////////////////////////////////////*/
+
+
+/*//////////////////////////FRIEND REQUEST POPUP////////////////////////////////*/
+
+.friend-request-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2F6690;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.friend-request-name {
+    width: 60%;
+    margin: 2em auto;
+    text-align: center;
+}
+/*///////////////////////////////////////////////////////////*/

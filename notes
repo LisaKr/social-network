@@ -1,0 +1,27 @@
+//we are passing it a react component and an html element which is on the page
+
+//this is jsx (js xml) syntax which react team invented. html tags start with lower case and components
+//start with capital letter
+//a jsx element is an expression
+//we need the tags aeound the function but not around the status element. theoretically invoking the funciton withou
+//tags would work too
+//components made with a function are called functional components
+//they must return a single element
+//you would put one big div like main in vue
+
+//prop is atuomatically there
+
+//to pass it down to another function
+//Greetee greetee={props.greetee}
+
+//if i want a dynamic class name or something its single curly braces
+//if i want to style it right there i need to do in with an object
+//var style = {color: tomato, fonstSize: 12px};
+//<div style={style}>
+
+//{{props.children}} will just apply whatever children you put in later on
+
+//functional compotents dont have state. class does. if you wanna use state you should use class
+//when the state changes you want react to REACT to this change
+
+//class component sets props of the component to whatever was passed to the component
