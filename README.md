@@ -63,4 +63,4 @@ Future Features
 ----------
 
 - make it responsive
-- exchange friendship request pop-up with a more elegant notification (e.g. a small one next to the friends icon)
+
